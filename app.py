@@ -55,13 +55,6 @@ selected_category = st.selectbox('Select a category', data['type'].unique())
 filtered_data_by_category = data[data['type'] == selected_category]
 st.write(filtered_data_by_category)
 
-# Filter by Date Range
-st.subheader('Filter by Date Range')
-start_date, end_date = st.date_input("Select a date range", [])
-if start_date and end_date:
-    filtered_data_by_date = data[(data['parsed_date'] >= start_date) & (data['parsed_date'] <= end_date)]
-    st.write(filtered_data_by_date)
-
 # Filter by Location
 st.subheader('Filter by Location')
 selected_location = st.selectbox('Select a location', data['location'].unique())
